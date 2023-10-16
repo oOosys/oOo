@@ -5,13 +5,13 @@
 ![oOo Guidelines gif](o0o_about_guidelines.o0o.gif "May the power of  oOo  be with you!") 
 ![oOo Guidelines gif](o0o_about_guidelines.o0o.gif "Be well and have a best day ever!") 
 
-#	Welcome to		oOo	coOo	eoOo	...
+##	Welcome to		oOo	coOo	eoOo	...
 
 The FINAL GOAL of a custom  oOo  computer system is to be able to "understand" (preferably in English language formulated) requests similar to what ChatGPT is capable of when providing requested source code of applications or when delivering requested informations. The  oOo  system uses the computer idle time to continously improve the speed of information access and the quality of its responses. 
 
 coOo	eoOo	are names chosen to respectively describe the favorite  Console/Terminal and TextEditor applications used on a custom  oOo  system. 
 
-# WHAT DOES  oOo  REALLY MEAN ?
+### WHAT DOES  oOo  REALLY MEAN ?
 
 The symbol/term/word  oOo  represents an idea ... and has many different meanings depending on context with a core meaning very hard to impossible to explain using words. 
 
