@@ -1,0 +1,19 @@
+#!/usr/bin/lua
+
+luaSpecialChars="^([]).%+-*?$"	-- need %-escape to be considered literally
+local function esc(s)
+	-- return Lua regex to match `sub` literally if used in `string.gsub(s,sub,repl)` 
+	return s:gsub("[%(%)%.%%%+%-%*%?%[%]%^%$]", "%%%1")
+end
+
+delay					= 100*7 -- 7 seconds per frame appr.  9 frames/minute
+scriptFileName			= arg[0]
+corePartOfFileName	= string.gsub(scriptFileName, esc(".gif_create-gif.oOo"), "")
+-- string.gsub() match pattern special characters: [ . - ] must be escaped
+pngFileNamesPattern	= corePartOfFileName .. "*.png"
+gif_image_fileName	= corePartOfFileName .. ".gif"
+
+cmd =	"convert " .. "-delay " .. tostring(delay) .. " -loop 0 "..
+		pngFileNamesPattern .. " " .. gif_image_fileName
+
+os.execute(cmd)
