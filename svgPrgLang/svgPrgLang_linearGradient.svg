@@ -1,0 +1,21 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+<!-- Linear gradient allows automated smooth transition between colors and is defined as a vector which divides an infinite plane in three areas by lines perpendicular to its direction at the end points. The area between the endpoints is filled with colors which exact values are given at exactly specifed distances between the vector endpoints. -->
+<defs>
+	<linearGradient id="absoluteGradient" x1="0" y1="100" x2="400" y2="300">
+		<stop offset="    25%" stop-color="red"		/>
+		<stop offset="    50%" stop-color="green" 	/>
+		<stop offset="    75%" stop-color="blue"	/>
+	</linearGradient>
+	<linearGradient id="relativeGradient" x1="0%" y1="25%" x2="100%" y2="75%">
+		<stop offset="    25%" stop-color="red"		/>
+		<stop offset="    50%" stop-color="green" 	/>
+		<stop offset="    75%" stop-color="blue"	/>
+	</linearGradient>
+</defs>
+<rect x="     0" y="     0" width="800" height="800" fill="#FFFFFFFF" />
+<rect x="     0" y="     0" width="800" height="800" rx="0" fill="url(#relativeGradient)" />
+
+<rect x="450" y="     0" width="200" height="200" rx="50"   fill="url(#relativeGradient)" />
+<rect x="200" y="200" width="400" height="400" rx="100" fill="url(#relativeGradient)" />
+<rect x="150" y="600" width="200" height="200" rx="50"   fill="url(#relativeGradient)" />
+</svg>
