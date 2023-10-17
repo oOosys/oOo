@@ -1,0 +1,51 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+<!--	Calculation of alpha-composited color resulting from placing layer A upon layer B  given their transparency (alpha channel) values can be done using following (as Porter-Duff  known) equations :
+		compositeColor  = colorA*alphaA +  colorB*(1-alphaA)
+		compositeAlpha =                alphaA + alphaB*(1-alphaA) 
+Multiple layers are handled applying the Porter-Duff equations recursively top to bottom layer using from two layers calculated color and alpha to calculate the next color and alpha values compositing them with the values in next layer. 
+The term "compositing" in the area of computer graphics means any kind of creating a final result out of multiple graphic components. The term "blending" as a sub-category of "compositing" expresses the limitation of "compositing" "to calculation of final image colors. 
+-->
+<rect x="0" y="0" width="900" height="600" fill="#FFFFEEFF" />
+<!--	Row	1,	Column	1	-->
+<g	transform="translate(0,0)">
+	<circle	cx="150"	cy="150"	r="150"	fill="#6666FF"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="#66FF66"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="#FF6666"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">R-G-B</text>
+</g>
+<!--	Row	2,	Column	1	-->
+<g	transform="translate(0,300)">
+	<circle	cx="150"	cy="150"	r="150"	fill="#66FF66"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="#6666FF"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="#FF6666"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">R-B-G</text>
+</g>
+<!--	Row	1,	Column	2	-->
+<g	transform="translate(300,0)">
+	<circle	cx="150"	cy="150"	r="150"	fill="#6666FF"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="#FF6666"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="#66FF66"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">G-R-B</text>
+</g>
+<!--	Row	2,	Column	2	-->
+<g	transform="translate(300,300)">
+	<circle	cx="150"	cy="150"	r="150"	fill="#FF6666"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="#6666FF"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="#66FF66"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">G-B-R</text>
+</g>
+<!--	Row	1,	Column	3	-->
+<g	transform="translate(600,0)">
+	<circle	cx="150"	cy="150"	r="150"	fill="#66FF66"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="#FF6666"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="#6666FF"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">B-R-G</text>
+</g>
+<!--	Row	2,	Column	3	-->
+<g	transform="translate(600,300)">
+	<circle	cx="150"	cy="150"	r="150"	fill="#FF6666"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="#66FF66"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="#6666FF"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">B-G-R</text>
+</g>
+</svg>

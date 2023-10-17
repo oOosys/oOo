@@ -1,0 +1,23 @@
+<svg width="210" height="150" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<!-- Every attribute of an element can be animated giving a series of its `values`, duration time of one animation cycle `dur` and `keyTimes` in range from zero 0 to one 1 covering the duration cycle period time. Not correct values results in ignoring the animation instructions. Multiple attributes can be animated at the same time specifying `additive="sum"`. Without the `additive` property set to `"sum"` only the last animation in case of multiple `animateTransform` will be executed. The animation start can be scheduled for future start in for example 7 seconds using `begin="7s"`. It is possible to implement very simple "blinking" by animating visibility
+The  <animateTransform ...> differs from the <animate ...> tag by the set of supported properties and is designed to animate object's transformation properties (translation, rotation, skew) rather than the values of the style attributes. 
+ -->
+<rect x="50" y="50" width="100" height="50" fill="#000000FF">
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+	values=	"0,100,75	; 360,75,55	; 360,75,55	; 0,100,75	; 0,100,75" 
+	keyTimes=	"0			; 0.4		; 0.5		; 0.6		;1" 
+	dur="14s" additive="sum" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" attributeType="XML" type="scale" values="1;0.5;0.5;1;1" keyTimes="0;0.4;0.5;0.6;1" dur="7s" additive="sum" repeatCount="indefinite" begin="7s"/>
+  <animate attributeName="visibility" attributeType="CSS" values="hidden;visible;hidden" keyTimes="0; 0.05; 1" dur="2s" repeatCount="indefinite" additive="sum" begin="3s"/>
+  <animate attributeName="fill" 
+	values=	"#000000	;green		;red		;blue		;brown		;cyan" 
+	keyTimes=	"0.0		; 0.2		;0.4			;0.6			;0.8			;1.0" 
+	dur="7s" repeatCount="indefinite" additive="sum" />
+  <!--- The `fill=` attribute seems to interact with the initially set attribute resulting in a combination/overley of given value and the initial value. Setting the initial value to black results in color transitions as specified in the animation (in Firefox). 
+Supported attributes for animations are:  
+	begin, dur, end, min, max, restart, repeatCount, repeatDur, fill
+	calcMode, values, keyTimes, keySplines, from, to, by, autoReverse, accelerate, decelerate
+	additive, accumulate
+-->  
+</rect>
+</svg>

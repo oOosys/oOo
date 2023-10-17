@@ -1,0 +1,58 @@
+#!/usr/bin/lua
+
+function copyTable(T) local retVal={} 
+	if type(T)=="table" then	for k,v in pairs(T) do retVal[k]=copyTable(v) end
+	else						retVal=T
+	end 	return retVal	end
+
+local T3colorChannels			= {"R", "G", "B"}
+local T3colorChannelsName	= { ["R"]="#FF6666", ["G"]="#66FF66",["B"]="#6666FF"}
+local svgMainTemplate = [[
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+<!--	Calculation of alpha-composited color resulting from placing layer A upon layer B  given their transparency (alpha channel) values can be done using following (as Porter-Duff  known) equations :
+		compositeColor  = colorA*alphaA +  colorB*(1-alphaA)
+		compositeAlpha =                alphaA + alphaB*(1-alphaA) 
+Multiple layers are handled applying the Porter-Duff equations recursively top to bottom layer using from two layers calculated color and alpha to calculate the next color and alpha values compositing them with the values in next layer. 
+The term "compositing" in the area of computer graphics means any kind of creating a final result out of multiple graphic components. The term "blending" as a sub-category of "compositing" expresses the limitation of "compositing" "to calculation of final image colors. 
+-->
+<rect x="0" y="0" width="900" height="600" fill="#FFFFEEFF" />
+%s
+</svg>]]
+local svgLabeledCirclesTemplate = [[
+<!--	Row	%d,	Column	%d	-->
+<g	transform="translate(%d,%d)">
+	<circle	cx="150"	cy="150"	r="150"	fill="%s"	opacity="0.6"	/>
+	<circle	cx="150"	cy="135"	r="125"	fill="%s"	opacity="0.5"	/>
+	<circle	cx="150"	cy="120"	r="   95"	fill="%s"	opacity="0.4"	/>
+	<text	  x="150"	  y="283"	font-weight="bold"	font-size="24"	fill="black"	text-anchor="middle">%s</text>
+</g>]]
+
+local svgCodeLabeledCircles = {}
+for columnNo,  columnColor in ipairs(T3colorChannels) do
+	local T2colorChannels = copyTable(T3colorChannels)
+	table.remove(T2colorChannels, columnNo)
+	for rowNo, rowColor in ipairs(T2colorChannels) do
+		local T1colorChannels = copyTable(T2colorChannels)
+		table.remove(T1colorChannels, rowNo)
+		local thirdColor = T1colorChannels[1]
+		local svgCodeLabeledCircle = string.format(svgLabeledCirclesTemplate, 
+			rowNo, columnNo, 
+			(columnNo-1)* 300, (rowNo-1)*300,  
+				T3colorChannelsName[thirdColor], 
+				T3colorChannelsName[rowColor], 
+				T3colorChannelsName[columnColor], 
+			columnColor .. "-" .. rowColor .. "-" .. thirdColor
+		)
+		table.insert(svgCodeLabeledCircles, svgCodeLabeledCircle)
+	end
+end
+local finalSVG = string.format(svgMainTemplate, table.concat(svgCodeLabeledCircles, "\n"))
+
+-- local oOoFName=arg[0] -- works only when run from command-line
+local oOoFName = "svg-lang_alpha-blending-compositing_impact-of-layer-order-on-resulting-color_Demo.svg.oOo"
+local svgFName = string.gsub(oOoFName, "%.oOo$", "") 
+local file = io.open(svgFName, "w")
+file:write(finalSVG)
+file:close()
+
+print("SVG code saved to: " .. svgFilename)
