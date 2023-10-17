@@ -1,0 +1,25 @@
+
+_=[[ ====================================================================
+ v--- ADD or REMOVE a third hyphen to choose first or second code block for execution    ]]
+---[[
+	--
+	print("  >> running the FIRST code block")
+	--
+--[=[ ]] ------------------------------------------------------------------------------------------------------------------------------
+	--
+	print("  >> running the SECOND code block") 
+	--
+--]=] -- ==================================================================
+
+
+_="					HOW AND WHY DOES THE MAGIC SWITCH WORK?				" --[[
+
+The "magic" is possible thanks to Lua support for nesting of multiline comments lower order within comments of higher order. 
+
+With three leading hyphens a former multiline comment invokation by --[[ will be disabled because turned to a line comment. This activates the first code block and at the same time activates the --[=[ invokation of a comment block which was previously considered content of a multiline comment and therefore disabled. With the activated --[=[ invokation the second code block turnes into a multiline comment. 
+
+This makes it possible to switch between execution of one of two code blocks with  only one single key-press. Just enjoy to experience this magic in a text editor which thanks to highlighting of Lua syntax shows which code block will be executed (this one highlighted as code, where the other block will be highlighted as comment).
+]]
+_="									WHEN IS THIS USEFUL?							" --[[
+This switch is useful when you are testing code and frequently need to choose between two variants of code. In other words it is useful in the initial development phase of a script code when you need to choose one of two methods or approaches for the final code version and therefore you are testing how they behave when you modify the preliminary part of the code.  
+]]
