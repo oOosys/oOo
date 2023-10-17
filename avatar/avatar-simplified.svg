@@ -1,0 +1,27 @@
+<svg width="106" height="106" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="yellow">
+      <stop offset="0" stop-color="#ffff00" />
+      <stop offset="1" stop-color="#ffff00" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="blue">
+      <stop offset="0" stop-color="#0000ff" />
+      <stop offset="1" stop-color="#0000ff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="red">
+      <stop offset="0" stop-color="#ff0000" />
+      <stop offset="1" stop-color="#ff0000" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="green">
+      <stop offset="0" stop-color="#00ff00" />
+      <stop offset="1" stop-color="#00ff00" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+<g transform="translate(0,-2)">  
+  <ellipse cx="52.944923" cy="54.645817" rx="44.143475" ry="44.08675" fill="url(#yellow)" stroke="url(#red)" stroke-width="17.60269571" />
+  <ellipse cx="78.963966" cy="43.202614" rx="22.769907" ry="23.062662" fill="url(#blue)" />
+  <ellipse cx="46.223091" cy="57.165691" rx="18.54496" ry="19.179298" fill="url(#red)" />
+  <ellipse cx="21.423723" cy="69.669319" rx="13.329192" ry="13.785122" fill="url(#green)" />
+</g>
+</svg>

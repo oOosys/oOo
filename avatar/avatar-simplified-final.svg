@@ -1,0 +1,28 @@
+<svg width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+<rect x="0" y="0" width="400" height="400" fill="#DDFFFFEE" rx="200" />
+
+<g id="G" transform="scale(4.0) translate(-3.0, -3) rotate(3,	53, 53), skewX(0) skewY(0)">
+
+	<radialGradient id="yellow" cx="0.40" cy="0.56" r="0.6" >
+		<stop offset="0" stop-color="#FFFFEE"	/>
+		<stop offset="1" stop-color="#DD0000"	/></radialGradient>
+	<ellipse cx="53" cy="53" rx="44" ry="44" fill="url(#yellow)" stroke="#FF3333" stroke-width="0.5"/>
+
+	<radialGradient id="green" cx="0.4" cy="0.5" r="0.5">
+		<stop offset="0" stop-color="#77FF77"	/>
+		<stop offset="1" stop-color="#00AA00"	/></radialGradient>
+	<ellipse cx="19" cy="69" rx="13" ry="13" fill="url(#green)"/>
+
+	<radialGradient id="red" cx="0.4" cy="0.5" r="0.5" >
+		<stop offset="0" stop-color="#FFAAAA"	/>
+		<stop offset="1" stop-color="#AA0000"	/></radialGradient>
+	<ellipse cx="45" cy="57" rx="18" ry="19" fill="url(#red)"/>
+
+	<radialGradient id="blue" cx="0.4" cy="0.5" r="0.6">
+		<stop offset="0" stop-color="#AAAAFF"	/>
+		<stop offset="1" stop-color="#0000AA"	/></radialGradient>
+	<ellipse cx="79" cy="41" rx="23" ry="23" fill="url(#blue)"/>
+
+</g>
+</svg>
