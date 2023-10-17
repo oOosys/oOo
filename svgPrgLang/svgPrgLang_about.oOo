@@ -1,0 +1,3 @@
+_=" svgPrgLang " --[[
+is the language used to describe an image content. Notice that animated .svg images need to be viewed using Firefox or other Internet browser supporting this part of the SVG language. 
+]]
