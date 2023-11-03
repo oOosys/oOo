@@ -36,7 +36,7 @@ Let's assign to the set of tools a human uses in order to share intentions, need
 The humanity developed since Babel many different languages.   oOo   uses to distinguish between them the suffix used in Internet to identify a country of origin of a domain name. So for example the context of English language is described in  oOo  using  "uk"  (and/or "us", "en"), the context of German language using "de",  the context of Chinese language using "cn", ...   .   To achieve brevity in cases of obvious context  oOo  skips mentioning the "Nat" part: cnLang, deLang, enLang or goes one step further skipping "Lang" too: cn, de, en, ...
 
 ####	prgLang:
-There are plenty of different programming languages created for the purpose of programming a electronic devices (like computer, notebook, cellphone, ...) . To express the context of programming an electronic device using a text based file   oOo   uses the term   prgLang   . 
+There are plenty of different programming languages created for the purpose of programming electronic devices (like computer, notebook, cellphone, ...) . To express the context of programming an electronic device using a text based file   oOo   uses the term   prgLang   . 
 
 ####	shPrgLang, luaPrgLang, pyPrgLang, ... :
   oOo   identifies programming languages using the default file name extension used for naming of script files written in these programming languages.   shPrgLang   means for example a shell script file which commands are described by the POSIX standard, luaPrgLang means a script file written in the Lua programming language, pyPrgLang means Python as the target interpreter for the script. 
