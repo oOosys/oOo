@@ -5,11 +5,11 @@
 ![oOo Guidelines gif](o0o_about_guidelines.o0o.gif "May the power of  oOo  be with you!") 
 ![oOo Guidelines gif](o0o_about_guidelines.o0o.gif "Be well and have a best day ever!") 
 
-##	Welcome to		oOo	coOo	eoOo	...
+##	Welcome to		**oOo**		...
 
-The FINAL GOAL of the  oOo  approach to usage of a computer system is to make it able to "understand" (preferably in English language formulated) requests similar to what ChatGPT is capable of when providing requested source code of applications or when delivering requested informations. The  oOo  system uses the computer idle time to continously improve the speed of information access and the quality of its responses. 
+The FINAL GOAL of the  oOo  approach to usage of an electronic device like a computer, notebook, tablet, smarthphone, ... is to make it able to "understand" (preferably in English language formulated) requests similar to what ChatGPT is capable of when providing requested source code of applications or when delivering requested information. The  oOo  system uses the computer idle time to continously improve the speed of information access and the quality of its responses. 
 
-coOo	eoOo	are names chosen to respectively describe the favorite  Console/Terminal and TextEditor applications used on a custom  oOo  system. 
+The oOo approach has no clear preferences towards specific software tools or programming languages, except this ones user of this approach decided to have. In other words if you have got the right idea about the oOo approach, you would understand that any individual user will follow own individual preferences leaving the part of exchanging ideas with others to be a matter of well in English language expressed precise sentences. 
 
 ### WHAT DOES  oOo  REALLY MEAN ?
 
