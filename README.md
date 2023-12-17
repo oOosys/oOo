@@ -11,7 +11,7 @@ The FINAL GOAL of the  oOo  approach to usage of an electronic device like a com
 
 The oOo approach has no clear preferences towards specific software tools or programming languages, except this ones user of this approach decided to have. In other words if you have got the right idea about the oOo approach, you would understand that any individual user will follow own individual preferences leaving the part of exchanging ideas with others to be a matter of well in English language expressed precise sentences. 
 
-### WHAT DOES  oOo  REALLY MEAN ?
+### WHAT DOES  oOo  MEAN ?
 
 The symbol/term/word  oOo  represents an idea ... and has many different meanings depending on context with a core meaning very hard to impossible to explain using words. 
 
