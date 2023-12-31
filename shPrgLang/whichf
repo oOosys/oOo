@@ -1,0 +1,55 @@
+#!/bin/bash
+	# Custom  which  by  oOosys  as part of the  oOo  system			     2023-12-31_21:26
+	# 	goes down a chain of links and scripts to the actual executable
+
+	# Other method of getting the dir part of full path fname: 
+	#	~ $ FPFNAME="/home/user/dir/fname.ext"
+	#	~ $ DIR=$(echo $FPFNAME | rev | cut -d"/" -f2- | rev)
+	# rev "/home/user/dir/fname.ext" -> 
+	#	 cut -d"/" -f2- txe.emanf/rid/resu/emoh/ -> 
+	#		 rev rid/resu/emoh/ -> /home/user/dir
+
+	BCKPCWD=$(pwd) # save current working directory
+	s0=$1 sb='  '
+	echo $s0
+	s1=$(which $s0)
+	echo "$sb-> $s1"
+	if [ ! -e "$s1" ] ; then
+	   exit
+	fi
+	while : ; do
+		#DIR=$(dirname $s1) 		# fails in case of spaces in file name - always use "${s1}"
+		DIR="$(dirname "${s1}")"	# FILE="$(basename "${s1}")"
+		SIZE=$(stat -c%s "$s1")		# provide file size of the executable
+		s2=$(file $s1 2>/dev/null) s3=${s2##*:} sb="  $sb"
+		echo "$sb-> $s3 ( fileSize = $SIZE bytes )" 
+		s4=${s3##* }				# get the last column with the file name path
+		cd $DIR						# required for symbolic link with relative path
+		# use $(pwd) to obtain the full path name of current directory 
+		if [ ! -e "$s4" ] ; then
+			if [[ $s3 == *"text"* ]]; then
+				scriptShebang=$(head -n 1 $s1)
+				scriptInterpreterPath=$( echo $scriptShebang | cut --delimiter='!' --fields=2 )
+				echo $scriptShebang
+				whichf $scriptInterpreterPath 
+			fi
+			cd $BCKPCWD 			# restore current working directory
+			break					# exit the loop and the script
+		fi
+		s1=$s4
+	done
+<<REM
+	  which  is a shell script which loops over paths provided in the $PATH environment
+		variable it exctracts from it by splitting the string on colons as separators.  
+o@s:~$ whichf which
+which
+  -> /usr/bin/which
+    ->  symbolic link to /etc/alternatives/which ( fileSize = 23 bytes )
+      ->  symbolic link to /usr/bin/which.debianutils ( fileSize = 26 bytes )
+        ->  POSIX shell script, ASCII text executable ( fileSize = 946 bytes )
+#! /bin/sh
+/bin/sh
+  -> /bin/sh
+    ->  symbolic link to dash ( fileSize = 4 bytes )
+      ->  ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=f7ab02fc1b8ff61b41647c1e16ec9d95ba5de9f0, for GNU/Linux 3.2.0, stripped ( fileSize = 125688 bytes )
+REM
